@@ -45,7 +45,7 @@
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0       &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                         &kp LALT  &lt 1 ESC  &lt 1 SPACE    &lt 2 SPACE  &mo 3  &kp RGUI
+                         &kp LALT  &lt 1 LEFT  &lt 1 SPACE    &lt 2 SPACE  &lt 3 RIGHT  &kp RGUI
             >;
         };
 
@@ -90,6 +90,7 @@
 &trans  &trans  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
 &trans  &trans  &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
                         &trans  &trans      &trans         &trans       &trans  &trans
+
             >;
         };
     };
