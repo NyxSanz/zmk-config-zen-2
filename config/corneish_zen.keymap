@@ -46,7 +46,7 @@
 &td0       &kp A  &kp S  &kp D  &kp F  &kp G                  &kp H  &kp J  &kp K      &kp L    &kp P     &kp SQT
 &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B                  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
 
-               &kp LALT  &lt 1 RIGHT  &lt 2 SPACE             &lt 3 td0     &lt 4 LEFT  &kp RGUI
+               &kp LALT  &lt 1 RIGHT  &lt 2 SPACE             &lt 3 SPACE   &lt 4 LEFT  &kp RGUI
             >;
         };
 
