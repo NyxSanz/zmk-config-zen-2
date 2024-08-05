@@ -26,7 +26,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
-&soft_off: &soft_off {
+soft_off: soft_off {
     hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
 };
     };
