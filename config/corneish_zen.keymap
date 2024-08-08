@@ -26,11 +26,11 @@ behaviors {
         #binding-cells = <0>;
         bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
     };
-    &mt {
+
+};
+&mt {
     tapping-term-ms = <300>;
 };
-};
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
