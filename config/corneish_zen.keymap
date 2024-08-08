@@ -31,7 +31,7 @@
             label = "TD1";
             #binding-cells = <2>;
             tapping-term-ms = <200>; // Ajusta el tiempo según tus preferencias
-            bindings = <&kp ESC>, <&kp LSHFT>;
+            bindings = <&kp ESC>, <&kp RIGHT_SHIFT>;
         };
     };
 
