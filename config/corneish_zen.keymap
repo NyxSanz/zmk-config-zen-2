@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -26,6 +27,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+        td1 : td1 {
+compatible = "zmk,behavior-hold-tap";
+            label = "TD1";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; // Ajusta el tiempo según tus preferencias
+            bindings = <&kp ESC>, <&kp RSHFT>;
+        }
     };
 
     keymap {
@@ -33,38 +41,38 @@
         default_layer {
             display-name = "QWERTY";
 
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |   '  | 
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI |RSE| SPC |   | ENT | LWR | ALT |
+         // --------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |           |  Y  |  U  |  I  |  O  |  P  | BKSP |
+            // | SHFT |  A  |  S  |  D  |  F  |  G  |           |  H  |  J  |  K  |  L  |  ;  |   '  | 
+            // | CTRL |  Z  |  X  |  C  |  V  |  B  |           |  N  |  M  |  ,  |  .  |  /  | ESC  |
+            //                   | GUI | RSE | SPC |           | ENT | LWR | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T                  &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D  &kp F  &kp G                  &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B                  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                &kp LGUI  &mo 1  &kp SPACE                  &lt 3 ENTER   &mo 2  &kp RALT
+                &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T                  &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &td0       &kp A  &kp S  &kp D  &kp F  &kp G                  &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B                  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &td1
+                          &kp LGUI  &mo 1  &kp SPACE                  &lt 3 ENTER   &mo 2  &kp RALT
             >;
         };
 
         lower_layer {
-            display-name = "ARROW_SYMBOL";
+    display-name = "ARROW_SYMBOL";
 
-            // -----------------------------------------------------------------------------------------
-            // |  ` |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  | BKSP|
-            // |  ~ |  +  |  _  |  =  |  [  |  ]  |         |  {  |  }  | UP  |  \  |  ;  |  "  |
-            // |  - | RET | END | INS |PRINT|  ;  |         | "|" |LEFT |DOWN |RIGHT|  ?  |  :  |
-            //                  | ALT |     | SPC |         | INS | DEL | GUI |
+    // -----------------------------------------------------------------------------------------
+    // |  ` | ! | @ | # | $ | % |         | ^  | &  | *  |  (  | ) | BKSP|
+    // |SHFT| + | _ | = | { | } |         |LEFT| UP |DOWN|RIGHT| ; |  "  |
+    // |CTRL| \ |"|"| - | [ | ] |         |HOME|END |PGUP |PGDWON|  ?  | RET2|
+    //       | ALT |     | SPC |         | ENT | DEL | RALT|
 
-            bindings = <
-&kp GRAVE  &kp EXCL   &kp AT        &kp HASH   &kp DLLR         &kp PRCNT          &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR   &kp BSPC
-&trans     &kp PLUS   &kp UNDER     &kp EQUAL  &kp LBKT         &kp RBKT           &kp LBRC   &kp RBRC  &kp UP     &kp BSLH  &kp SEMI   &kp DQT
-&trans     &kp MINUS  &kp TILDE     &kp END    &kp PRINTSCREEN  &kp FSLH           &kp PIPE   &kp LEFT  &kp DOWN   &kp RIGHT &kp QMARK  &kp COLON
-                                           &trans     &trans    &trans                     &kp INS    &kp DEL   &trans
-            >;
-        };
+    bindings = <
+        &kp GRAVE  &kp EXCL  &kp AT     &kp HASH   &kp DLLR  &kp PRCNT          &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR   &kp BSPC
+        &trans     &kp PLUS  &kp UNDER  &kp EQUAL  &kp LBKT  &kp RBKT           &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT &kp SEMI   &kp DQT
+        &trans     &kp BSLH  &kp PIPE   &kp MINUS  &kp LBRC  &kp RBRC           &kp HOME   &kp END   &kp PG_UP  &kp PG_DN &kp QMARK  &kp RET2
+                                              &trans    &trans   &trans      &trans     &kp DEL   &trans
+    >;
+}
 
-        raise_layer {
+     raise_layer {
             display-name = "RGB_NUM";
 
             // -----------------------------------------------------------------------------------------
@@ -74,31 +82,29 @@
             //                       | GUI |      | SPC  |            | DEL |     |  0  |
 
             bindings = <
-&rgb_ug RGB_TOG  &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3                &kp  N7  &kp  N8  &kp  N9  &kp KP_PLUS      &kp KP_NUM    &trans
-&rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &out OUT_USB     &out OUT_BLE                &kp  N4  &kp  N5  &kp  N6  &kp KP_MINUS     &kp CLEAR     &kp K_CALC
-&rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD             &kp  N1  &kp  N2  &kp  N3  &kp KP_ASTERISK  &kp KP_SLASH  &trans
-                                                   &trans           &trans           &kp SPACE                   &kp DEL  &trans  &kp KP_N0
+                &rgb_ug RGB_TOG  &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3                &kp  N7  &kp  N8  &kp  N9  &kp KP_PLUS      &kp KP_NUM    &trans
+                &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &out OUT_USB     &out OUT_BLE                &kp  N4  &kp  N5  &kp  N6  &kp KP_MINUS     &kp CLEAR     &kp K_CALC
+                &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD             &kp  N1  &kp  N2  &kp  N3  &kp KP_ASTERISK  &kp KP_SLASH  &trans
+                                                           &trans           &trans           &kp SPACE                   &kp DEL  &trans  &kp KP_N0
           >;
         };
 
 
-        layer_3 {
+         layer_3 {
             display-name = "Fn";
 
             // -----------------------------------------------------------------------------------------
-            // | F1 |  F2 |  F3 |  F4 |  F5 |  F6 |           | F7  |  F8 |  F9 |  F10 |  F11 | F12 |
-            // |    |usb  |     |     |RESET|BOOT |           |BOOT |SCRLL| UP  |PRINT |HOME  |PGUP |
-            // | DEL|RGBOF|RBGON|epon |expof|     |           |PAUSE|LEFT | DOWN|RIGHT |END   |PGDN |
-            //                  | ALT |     | SPC |           | SPC |     | GUI |
-
+            // | F1  |  F2  |  F3  |  F4  |  F5  |  F6  |           | F7  |  F8  |  F9  | F10  | F11  | F12  |
+            // |     | usb  |      |      | RESET| BOOT |           |BOOT |SCRLL | UP  |PRINT | HOME | PGUP |
+            // | DEL |RGBOF |RBGON | epon | expof|      |           |PAUSE|LEFT  |DOWN |RIGHT | END  | PGDN |
+            //                     | ALT  |      | SPC  |           | SPC |      | GUI |
 
             bindings = <
-&kp F1  &kp F2           &kp F3         &kp F4             &kp F5              &kp F6             &kp F7           &kp F8          &kp F9    &kp F10          &kp F11    &kp F12
-&trans  &out OUT_USB     &out OUT_BLE   &soft_off          &sys_reset          &bootloader        &bootloader      &kp SCROLLLOCK  &kp UP    &kp PRINTSCREEN  &kp HOME   &kp PG_UP
-&kp DEL &rgb_ug RGB_OFF  &rgb_ug RGB_ON &ext_power EP_OFF  &ext_power EP_ON    &trans             &kp PAUSE_BREAK  &kp LEFT        &kp DOWN  &kp RIGHT        &kp END    &kp PG_DN   
-                                &trans  &trans      &trans                                         &trans       &trans  &trans
+                &kp F1  &kp F2           &kp F3         &kp F4             &kp F5              &kp F6             &kp F7           &kp F8          &kp F9    &kp F10          &kp F11    &kp F12
+                &trans  &out OUT_USB     &out OUT_BLE   &soft_off          &sys_reset          &bootloader        &bootloader      &kp SCROLLLOCK  &kp UP    &kp PRINTSCREEN  &kp HOME   &kp PG_UP
+                &kp DEL &rgb_ug RGB_OFF  &rgb_ug RGB_ON &ext_power EP_OFF  &ext_power EP_ON    &trans             &kp PAUSE_BREAK  &kp LEFT        &kp DOWN  &kp RIGHT        &kp END    &kp PG_DN   
+                            &trans  &trans      &trans                                         &trans       &trans  &trans
             >;
-        };
 
 
     };
