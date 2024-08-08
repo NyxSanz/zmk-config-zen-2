@@ -56,7 +56,7 @@
         };
 
         lower_layer {
-    display-name = "ARROW_SYMBOL";
+            display-name = "ARROW_SYMBOL";
 
     // -----------------------------------------------------------------------------------------
     // |  ` | ! | @ | # | $ | % |         | ^  | &  | *  |  (  | ) | BKSP|
@@ -70,7 +70,7 @@
         &trans     &kp BSLH  &kp PIPE   &kp MINUS  &kp LBRC  &kp RBRC           &kp HOME   &kp END   &kp PG_UP  &kp PG_DN &kp QMARK  &kp RET2
                                               &trans    &trans   &trans      &trans     &kp DEL   &trans
     >;
-}
+};
 
      raise_layer {
             display-name = "RGB_NUM";
