@@ -19,22 +19,22 @@
 };
 
 / {
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-        shf_esc : shf_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "shf_esc";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&kp RIGHT_SHIFT>;
-        };
-       
+&behaviors {
+    td0: td0 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TD0";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
     };
+
+    shf_esc: shf_esc {
+        compatible = "zmk,behavior-hold-tap";
+        label = "shf_esc";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        bindings = <&kp ESC &kp RIGHT_SHIFT>;
+    };
+};
 
     keymap {
         compatible = "zmk,keymap";
