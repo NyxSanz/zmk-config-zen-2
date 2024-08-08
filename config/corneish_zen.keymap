@@ -19,7 +19,7 @@
 };
 
 / {
-&behaviors {
+behaviors {
     td0: td0 {
         compatible = "zmk,behavior-tap-dance";
         label = "TD0";
